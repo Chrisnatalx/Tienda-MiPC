@@ -47,5 +47,8 @@ let placa = prompt("que placa de video estas buscando?");
 
 const mostrarProducto = miArray.find(elemento => elemento.producto == placa);
 console.log(mostrarProducto);*/
-let pl = document.getElementsByClassName("carro");
-pl.innerHTML = <buttom>Agregado</buttom>
+let miBoton = document.getElementsByClassName("btn-success");
+miBoton.addEventListener("click",agregar);
+function agregar(){
+    miBoton.innerText = 'Agregado';
+}

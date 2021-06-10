@@ -32,9 +32,9 @@
 }
 .carta{
     width: 18rem;
-    margin:15px 0px 15px 0px;
+    margin:15px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border-radius: 3px;
+    border-radius: 15px;
 }
 .carta:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
