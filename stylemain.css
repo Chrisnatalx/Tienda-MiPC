@@ -1,17 +1,12 @@
+.menu{
+    padding:0px ;
+    margin: 0px;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+}
 .fa-power-off{
     color: #4f8b00;
-}
-.fondo{
-    background: radial-gradient(ellipse at center,#585858 0,#232323 100%);
-    color:#000000;
-    height: 300px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    font-family: var(--bs-font-sans-serif);
-    padding: 10px;
 }
 .card{
     border-radius: 3px;
@@ -50,24 +45,48 @@
 }
 
 .footer{
-    background:#f8f9fa;
-    height:100px;
+    background: radial-gradient(ellipse at center,#585858 0,#232323 100%);
+    color:#000000;
+    height:150px;
     text-align: center;
     font-size: 25px;
-    color: #585858;
-    margin: 20px;
+    color: #FFFFFF;
+    margin-top: 20px;
+    margin-bottom: 0px;
 }
 .foot i{
+    margin-top: 70px;
     padding-left: 20px;
     padding-right: 20px;
     text-decoration: none;
-    color: #585858;
+    color: #FFFFFF;
 }
 .foot i:visited{
-    color: #585858;
+    color: #FFFFFF;
 }
 .footer i:hover{
     transform:scale(1.25 , 1.25);
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+.Formulario{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+}
+.Relleno{
+    margin-top: 15px;
+}
+.Relleno img{
+    height: 450px;
+    width: 100%;
 }
 
 @media (max-width: 1300px){

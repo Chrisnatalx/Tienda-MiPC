@@ -12,42 +12,44 @@
     <title>MiPC</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"><i class="fas fa-power-off"></i></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#Sobre-nosotros">Sobre Nosotros</a>
-              </li>
-              <li class="nav-item" id="Carro">
-                <a class="nav-link" href="#" ><i class="fas fa-shopping-cart"></i></a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Productos
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#Productos">Placa de video</a></li>
-                  <li><a class="dropdown-item" href="#procesadores">Procesadores</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#Motherboards">Motherboards</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit" id="boton0">Buscar</button>
-            </form>
+  <div class="menu">
+      <nav  class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-power-off"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#Sobre-nosotros">Sobre Nosotros</a>
+                </li>
+                <li class="nav-item" id="Carro">
+                  <a class="nav-link" href="#" ><i class="fas fa-shopping-cart"></i></a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Productos
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#Productos">Placa de video</a></li>
+                    <li><a class="dropdown-item" href="#procesadores">Procesadores</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#Motherboards">Motherboards</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input id="lector" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success" type="button" id="boton0">Buscar</button>
+              </form>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
       </div>
       <!--carousel-->
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -241,33 +243,9 @@
       </div>
     </div>
           <!--sobre nosotros-->
-          <div id="Sobre-nosotros">
-            <div class="fondo">
-              <div class="card">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Contacto</li>
-                  <li class="list-group-item"><i class="fa fa-phone">:1133333333</i></li>
-                  <li class="list-group-item"><i class="fa fa-envelope"></i>: Tupc@Gmail.com</li>
-                </ul>
-              </div>
-              <div class="card" >
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Preguntas Frecuentes</li>
-                  <li class="list-group-item">Sacar turno</li>
-                  <li class="list-group-item">A third item</li>
-                </ul>
-              </div>
-              <div class="card">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">An item</li>
-                  <li class="list-group-item">A second item</li>
-                  <li class="list-group-item">A third item</li>
-                </ul>
-              </div>   
-            </div>  
-          </div>  
+
     <!--Footer-->
-    <div class="footer">
+    <div id="Sobre-nosotros" class="footer">
         <div class="foot">
           <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
           <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a> 

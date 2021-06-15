@@ -12,7 +12,7 @@
     <title>MiPC</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html"><i class="fas fa-power-off"></i></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,6 +26,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="#Sobre-nosotros">Sobre Nosotros</a>
               </li>
+              <li class="nav-item" id="Carro">
+                <a class="nav-link" href="#" ><i class="fas fa-shopping-cart"></i></a>
+              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Productos
@@ -38,7 +41,68 @@
                 </ul>
               </li>
             </ul>
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" id="boton0">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <div class="contenedor">
+          <div class="slide-bar">
+            <p>Mi Carrito</p>
+          </div>
+        <div class="Formulario">
+            <h1>Finaliza tu compra</h1>
+            <label for="inputPassword5" class="form-label">Nombre</label>
+            <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Christian">
+            <div id="passwordHelpBlock" class="form-text">
+            </div>
+            <label for="inputPassword5" class="form-label">Apellido</label>
+            <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Natale">
+            <div id="passwordHelpBlock" class="form-text">
+            </div>
+            <label for="inputPassword5" class="form-label">Número de tarjeta</label>
+            <input type="number" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder="0000 0000 0000 0000">
+            <div id="passwordHelpBlock" class="form-text">
+            </div>
+            <button type="submit" class="btn btn-success">Finalizar Compra</button>
+          </div>
+      </div>
+      <!--Footer-->
+<div class="Relleno">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="imagenes/BlackWidow2019_OGimage-1200x630.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="imagenes/hyperx-main-banner-1600x415.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="imagenes/Logitech-sluchatka-banner.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+    <div id="Sobre-nosotros" class="footer">
+      <div class="foot">
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a> 
+        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a> 
+        <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.twitch.tv/"><i class="fab fa-twitch"></i></a>
+      </div>
+  </div>
+  <script src="script.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>

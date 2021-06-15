@@ -1,54 +1,5 @@
-/*alert("calcula las cuotas de tu 1050ti 3,6 y 12");
-let productoUno = 66000;
-let cliente =parseInt(prompt("en cuantas cuotas lo vas a pagar?"));
-function calcular3Cuotas(){
-        resultado = productoUno/3;
-        alert("Te quedan 3 cuotas de " + resultado );
-    }
-    function calcular6Cuotas(){
-        resultado = productoUno/6;
-        alert("Te quedan 6 cuotas de " + resultado );
-    }
-    function calcular12Cuotas(){
-        resultado = productoUno/12;
-        alert("Te quedan 12 cuotas de " + resultado );
-    }
-if (cliente == 3){
-    calcular3Cuotas();}
-else if (cliente == 6) {
-    calcular6Cuotas();
-}
-else if( cliente == 12){
-    calcular12Cuotas();
-}
-class TodosLosProductos{
-    constructor (producto, precio){
-        this.producto = producto;
-        this.precio = precio;
-    }
-    mostrarproducto() {
-        console.log(this.producto + " " +this.precio);
-    }
-}
-let producto1 = new producto("1050 ti 4gb",66000);
-let producto2 = new producto("1660 super 6gb",160000);
-let producto3 = new producto("rx550 2gb",30000);
-let producto4 = new producto("rx570 4gb",95000);
-producto1.mostrarproducto();
-producto2.mostrarproducto();
-producto3.mostrarproducto();
-producto4.mostrarproducto();*/
-
-/*let miArray =[{id:1, producto:1050, precio: 66000},
-    {id:2, producto:1660, precio: 160000},
-    {id:3, producto:550, precio: 30000},
-    {id:4, producto:570, precio: 95000}];
-let placa = prompt("que placa de video estas buscando?");
-
-const mostrarProducto = miArray.find(elemento => elemento.producto == placa);
-console.log(mostrarProducto);*/
 let productos =[
-    {id:1, producto:"1050ti", precio:66_000},
+    {id:1, producto:"1050 ti", precio:66_000},
     {id:2, producto:"1660 super", precio:120_000},
     {id:3, producto:"rx 550", precio:40_000},
     {id:4, producto:"rx 570", precio:109_000},
@@ -73,7 +24,7 @@ let productos =[
 let carrito= [];
 
 let miBoton = document.getElementById("boton1");
-miBoton.addEventListener("click", agregar);
+miBoton.addEventListener("click", agregar());
 function agregar(){
     miBoton.innerText = 'Agregado';
     carrito.push(productos[0]);
@@ -240,33 +191,10 @@ function cambio(){
     }
     
 }
-//let buscador = document.getElementsByClassName("form-control");
-//buscardor.addEventlistener("click",buscar);
-//function buscar(){
-
-//}
-/*let miBoton = document.getElementsByClassName("btn btn-success");
-miBoton.addEventListener("click",agregar(0));
-miBoton.addEventListener("click",agregar(1));
-miBoton.addEventListener("click",agregar(2));
-miBoton.addEventListener("click",agregar(3));
-miBoton.addEventListener("click",agregar(4));
-miBoton.addEventListener("click",agregar(5));
-miBoton.addEventListener("click",agregar(6));
-miBoton.addEventListener("click",agregar(7));
-miBoton.addEventListener("click",agregar(8));
-miBoton.addEventListener("click",agregar(9));
-miBoton.addEventListener("click",agregar(10));
-miBoton.addEventListener("click",agregar(11));
-miBoton.addEventListener("click",agregar(12));
-miBoton.addEventListener("click",agregar(13));
-miBoton.addEventListener("click",agregar(14));
-miBoton.addEventListener("click",agregar(15));
-miBoton.addEventListener("click",agregar(16));
-miBoton.addEventListener("click",agregar(17));
-miBoton.addEventListener("click",agregar(18));
-miBoton.addEventListener("click",agregar(19));
-
-function agregar(numero){
-    miBoton[numero].innerText = 'Agregado';
-}*/
+let buscador = document.querySelector("#lector");
+let filtrar = document.querySelector("#boton0");
+filtrar.addEventListener("click",buscar);
+function buscar(){
+        const mostrarProducto = productos.find(elemento => elemento.producto == buscador.value);
+        console.log(mostrarProducto);
+}
