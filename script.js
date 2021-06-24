@@ -21,180 +21,32 @@ let productos =[
     {id:20, producto:"a320", precio:8_119},
 ];
 
-let carrito= [];
-
-let miBoton = document.getElementById("boton1");
-miBoton.addEventListener("click", agregar());
-function agregar(){
-    miBoton.innerText = 'Agregado';
-    carrito.push(productos[0]);
-    console.log(carrito);
+const carrito= [];
+const agregar = (producto, boton) =>{
+    boton.innerText = 'Agregado';
+    carrito.push(producto);
     cambio();
 }
-let miBoton2 = document.getElementById("boton2");
-miBoton2.addEventListener("click", agregarDos);
-function agregarDos(){
-    miBoton2.innerText = 'Agregado';
-    carrito.push(productos[1]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton3 = document.getElementById("boton3");
-miBoton3.addEventListener("click", agregarTres);
-function agregarTres(){
-    miBoton3.innerText = 'Agregado';
-    carrito.push(productos[2]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton4 = document.getElementById("boton4");
-miBoton4.addEventListener("click", agregarCuatro);
-function agregarCuatro(){
-    miBoton4.innerText = 'Agregado';
-    carrito.push(productos[3]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton5 = document.getElementById("boton5");
-miBoton5.addEventListener("click", agregarCinco);
-function agregarCinco(){
-    miBoton5.innerText = 'Agregado';
-    carrito.push(productos[4]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton6 = document.getElementById("boton6");
-miBoton6.addEventListener("click", agregarSeis);
-function agregarSeis(){
-    miBoton5.innerText = 'Agregado';
-    carrito.push(productos[5]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton7 = document.getElementById("boton7");
-miBoton7.addEventListener("click", agregarSiete);
-function agregarSiete(){
-    miBoton7.innerText = 'Agregado';
-    carrito.push(productos[6]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton8 = document.getElementById("boton8");
-miBoton8.addEventListener("click", agregarOcho);
-function agregarOcho(){
-    miBoton8.innerText = 'Agregado';
-    carrito.push(productos[7]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton9 = document.getElementById("boton9");
-miBoton9.addEventListener("click", agregarNueve);
-function agregarNueve(){
-    miBoton9.innerText = 'Agregado';
-    carrito.push(productos[8]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton10 = document.getElementById("boton10");
-miBoton10.addEventListener("click", agregarDiez);
-function agregarDiez(){
-    miBoton10.innerText = 'Agregado';
-    carrito.push(productos[9]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton11 = document.getElementById("boton11");
-miBoton11.addEventListener("click", agregarOnce);
-function agregarOnce(){
-    miBoton11.innerText = 'Agregado';
-    carrito.push(productos[10]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton12 = document.getElementById("boton12");
-miBoton12.addEventListener("click", agregarDoce);
-function agregarDoce(){
-    miBoton12.innerText = 'Agregado';
-    carrito.push(productos[11]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton13 = document.getElementById("boton13");
-miBoton13.addEventListener("click", agregarTrece);
-function agregarTrece(){
-    miBoton13.innerText = 'Agregado';
-    carrito.push(productos[12]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton14 = document.getElementById("boton14");
-miBoton14.addEventListener("click", agregarCatorce);
-function agregarCatorce(){
-    miBoton14.innerText = 'Agregado';
-    carrito.push(productos[13]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton15 = document.getElementById("boton15");
-miBoton15.addEventListener("click", agregarQuince);
-function agregarQuince(){
-    miBoton15.innerText = 'Agregado';
-    carrito.push(productos[14]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton16 = document.getElementById("boton16");
-miBoton16.addEventListener("click", agregarDieciseis);
-function agregarDieciseis(){
-    miBoton15.innerText = 'Agregado';
-    carrito.push(productos[15]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton17 = document.getElementById("boton17");
-miBoton17.addEventListener("click", agregarDiecisiete);
-function agregarDiecisiete(){
-    miBoton17.innerText = 'Agregado';
-    carrito.push(productos[16]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton18 = document.getElementById("boton18");
-miBoton18.addEventListener("click", agregarDieciocho);
-function agregarDieciocho(){
-    miBoton18.innerText = 'Agregado';
-    carrito.push(productos[17]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton19 = document.getElementById("boton19");
-miBoton19.addEventListener("click", agregarDiecinueve);
-function agregarDiecinueve(){
-    miBoton19.innerText = 'Agregado';
-    carrito.push(productos[18]);
-    console.log(carrito);
-    cambio();
-}
-let miBoton20 = document.getElementById("boton20");
-miBoton20.addEventListener("click", agregarVeinte);
-function agregarVeinte(){
-    miBoton20.innerText = 'Agregado';
-    carrito.push(productos[19]);
-    cambio();
-}
+productos.map(producto => {
+    const miBoton = document.getElementById(`boton${producto.id}`);
+    miBoton.addEventListener("click", ()=>agregar(producto,miBoton));
+})
 
 function cambio(){
     
-    let notificacion = document.getElementById("Carro");
+    const notificacion = document.getElementById("Carro");
     if (carrito.length > 0){
         notificacion.innerHTML =`<a class="nav-link" href="compra.html" >Ver productos</a>`
     }
     
 }
-let buscador = document.querySelector("#lector");
-let filtrar = document.querySelector("#boton0");
+const buscador = document.querySelector("#lector");
+const filtrar = document.querySelector("#boton0");
 filtrar.addEventListener("click",buscar);
 function buscar(){
         const mostrarProducto = productos.find(elemento => elemento.producto == buscador.value);
         console.log(mostrarProducto);
 }
+
+
+    
