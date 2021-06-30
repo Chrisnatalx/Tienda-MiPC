@@ -1,52 +1,103 @@
-let productos =[
-    {id:1, producto:"1050 ti", precio:66_000},
-    {id:2, producto:"1660 super", precio:120_000},
-    {id:3, producto:"rx 550", precio:40_000},
-    {id:4, producto:"rx 570", precio:109_000},
-    {id:5, producto:"rx 580", precio:180_000},
-    {id:6, producto:" gtx 3060", precio:250_000},
-    {id:7, producto:"5500xt", precio:160_000},
-    {id:8, producto:"rx 570 8gb", precio:125_000},
-    {id:9, producto:"i3", precio:17_000},
-    {id:10, producto:"i5", precio:24_999},
-    {id:11, producto:"ryzen3", precio:17_000},
-    {id:12, producto:"ryzen5", precio:28_999},
-    {id:13, producto:"ryzen3400g", precio:38_999},
-    {id:14, producto:"i7", precio:58_999},
-    {id:15, producto:"ryzen7", precio:58_999},
-    {id:16, producto:"ryzen9", precio:111_999},
-    {id:17, producto:"b550h", precio:14_999},
-    {id:18, producto:"a520", precio:8_339},
-    {id:19, producto:"h310", precio:6_719},
-    {id:20, producto:"a320", precio:8_119},
-];
-
-const carrito= [];
-const agregar = (producto, boton) =>{
-    boton.innerText = 'Agregado';
-    carrito.push(producto);
-    cambio();
+const productos = PRODUCTOS
+  
+function obtenerCarrito() {
+    return JSON.parse(localStorage.getItem('carrito')) || [];
 }
-productos.map(producto => {
-    const miBoton = document.getElementById(`boton${producto.id}`);
-    miBoton.addEventListener("click", ()=>agregar(producto,miBoton));
-})
 
-function cambio(){
-    
+function agregarAlCarrito(productoId) {
+    const carrito= obtenerCarrito();
+    const productoYaEnCarrito = carrito.includes(productoId);
+    if( !productoYaEnCarrito ){
+        carrito.push(productoId);
+        localStorage.setItem('carrito',JSON.stringify(carrito));
+        cambio(carrito,productoId);
+    }
+}
+
+function crearCartaProducto(producto) {
+    const carrito= obtenerCarrito();
+    const productoYaEnCarrito = carrito.includes(producto.id);
+    let texto = "Agregar al carrito"
+
+    if(productoYaEnCarrito){ 
+        texto = "Agregado"
+    }
+
+    return `<div class="carta">
+        <img src="${producto.imagen}" class="card-img-top" alt="${producto.producto}">
+        <div class="card-body">
+        <p class="card-text">${producto.producto} </p>
+        <h2>${producto.precio}</h2>
+        <button type="button" class="btn btn-success" id="boton${producto.id}" onclick="agregarAlCarrito(${producto.id})" >${texto}</button>
+        </div>
+    </div>`
+}
+
+function cargarProductos(productos) {
+    const cargarProductosPorCategoria = (idContenedor,categoria) =>{
+        const contenedor = document.getElementById(idContenedor);
+        let html = "";
+        const productosPorCategoria = productos.filter(producto => producto.categoria === categoria)
+        for( producto of productosPorCategoria){
+            html +=crearCartaProducto(producto)
+        }
+        contenedor.innerHTML = html;
+    }
+
+    cargarProductosPorCategoria("placas-container","placa-de-video")
+    cargarProductosPorCategoria("procesadores-container","procesador")
+    cargarProductosPorCategoria("motherboards-container","motherboard")
+}
+
+function chequearEstadoCarrito(carrito) {
     const notificacion = document.getElementById("Carro");
     if (carrito.length > 0){
         notificacion.innerHTML =`<a class="nav-link" href="compra.html" >Ver productos</a>`
     }
-    
-}
-const buscador = document.querySelector("#lector");
-const filtrar = document.querySelector("#boton0");
-filtrar.addEventListener("click",buscar);
-function buscar(){
-        const mostrarProducto = productos.find(elemento => elemento.producto == buscador.value);
-        console.log(mostrarProducto);
 }
 
+function cambio(carrito,productoId) {
+    chequearEstadoCarrito(carrito);
+    const boton = document.getElementById(`boton${productoId}`);
+    boton.innerText = 'Agregado';
+}
 
+function borrarBusqueda() {
+    $("#busqueda-container").css('display','none')
+    cargarProductos(productos);
+}
+
+function buscar() {
+    const textoBusqueda = document.querySelector("#lector");
+    const productosFiltrados = productos.filter(elemento => elemento.producto.includes(textoBusqueda.value));
     
+    let texto = `Búsqueda: ${textoBusqueda.value}`
+    if(!productosFiltrados.length)texto+=" (Sin resultados)";
+    document.getElementById("busqueda").innerHTML = texto;
+
+    $("#busqueda-container").css('display','block')
+    cargarProductos(productosFiltrados);
+ }
+
+function cargarProductosCarrito() {
+    const idProductosEnCarrito = obtenerCarrito()
+    const productosEnCarrito = productos.filter(producto => idProductosEnCarrito.includes(producto.id))
+    const contenedor = document.getElementById("slide-bar");
+
+    let html = "";
+    for( producto of productosEnCarrito){
+        html +=crearCartaProducto(producto)
+    }
+    contenedor.innerHTML = html;
+}
+
+ window.onload = function(){
+    cargarProductos(productos);
+    const carrito= obtenerCarrito();
+    chequearEstadoCarrito(carrito);
+    
+    document.getElementById("boton-buscar").addEventListener("click",buscar);
+    document.getElementById("borrar-busqueda").addEventListener("click",borrarBusqueda);
+    
+    
+ }

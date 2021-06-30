@@ -1,7 +1,6 @@
 .menu{
     padding:0px ;
     margin: 0px;
-    position: fixed;
     width: 100%;
     height: 50px;
 }
@@ -73,6 +72,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100%;
+    width: auto;
 }
 
 .Formulario{
@@ -80,7 +80,12 @@
     grid-template-columns: auto;
     justify-content: center;
     align-items: center;
-    text-align: center;    
+    text-align: center;  
+    height: 200px;  
+}
+#slide-bar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .Relleno{
     margin-top: 15px;
@@ -88,6 +93,18 @@
 .Relleno img{
     height: 450px;
     width: 100%;
+}
+#busqueda-container{
+    display: none;
+}
+#busqueda{
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+#borrar-busqueda{
+    margin-top: 10px;
+    margin-left: 15px;
 }
 
 @media (max-width: 1300px){
@@ -98,7 +115,16 @@
     .card{
         width: 200px;
     }
-
+}
+@media (max-width: 900px){
+    #slide-bar{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }    
+    .carta{
+        width: 200px;
+        margin: 5px;
+    }
 }
 @media (max-width: 700px){
     .Placa-video{
@@ -106,7 +132,8 @@
         grid-template-columns: 1fr 1fr;
     }
     .carta{
-        width: 200px;
+        width: 150px;
+        margin: 2px;
     }
     .fondo{
         display: grid;
@@ -119,7 +146,9 @@
         display: grid;
         grid-template-columns: 1fr;
     }
-    .carta {width: 18rem;}
+    .carta {
+        width: 150px;
+    }
     .fondo{
         height: auto;
         display: grid;
