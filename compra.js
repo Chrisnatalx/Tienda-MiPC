@@ -40,4 +40,17 @@ function eliminarDelCarrito(productoId) {
     localStorage.setItem('carrito',JSON.stringify(nuevosID));
     cargarProductosCarrito();
 }
- 
+const URLGET = 'https://www.dolarsi.com/api/api.php?type=valoresprincipales';
+$("#boton-api").click(() => {
+     $.ajax({
+         method: "GET",
+         url: URLGET,
+         success: function(dolar) {
+             $("#dolar").html(`<div>
+                                     <p> ${dolar[0].casa.compra}</p>
+                                     <p> ${dolar[0].casa.venta}</p>
+                                 </div>`);
+            }
+     });
+
+});
