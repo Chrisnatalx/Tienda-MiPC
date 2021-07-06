@@ -1,6 +1,8 @@
+/* color para el logo*/
 .fa-power-off{
     color: #4f8b00;
 }
+/* estilos para las cartas que contienen los productos*/
 .card{
     border-radius: 3px;
     box-shadow: #585858 2px;
@@ -8,7 +10,8 @@
     height: 130px;
     width: 18rem;
 }
-.Placa-video{
+
+.producto{
     margin-left: 50px;
     margin-right: 50px;
     padding-top: 15px;
@@ -18,26 +21,24 @@
     justify-content: center;
     justify-items: center;
 }
+
 .carta{
     width: 18rem;
     margin:15px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 15px;
 }
+
 .carta:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 .card-img-top{
     padding: 5px;
     width: 150px;
     height: 200px;
 }
-.carro{
-    background: #4f8b00;
-    color: #FFFFFF;
-    border-color: #4f8b00;
-}
-
+/*estilos footer*/
 .footer{
     background: radial-gradient(ellipse at center,#585858 0,#232323 100%);
     color:#000000;
@@ -61,7 +62,7 @@
 .footer i:hover{
     transform:scale(1.25 , 1.25);
 }
-
+/*estilos carrito de compra.html*/
 .contenedor{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -77,40 +78,48 @@
     text-align: center;  
     height: 200px;  
 }
+
 #slide-bar{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.Relleno{
+/* estilos carousel compra.html*/
+.banner{
     margin-top: 15px;
 }
-.Relleno img{
+.banner img{
     height: 450px;
     width: 100%;
 }
+/*estilos para resultados de busqueda*/
 #busqueda-container{
     display: none;
 }
+
 #busqueda{
     margin-top: 10px;
     margin-left: 15px;
     margin-bottom: 5px;
 }
+
 #borrar-busqueda{
     margin-top: 10px;
     margin-left: 15px;
 }
+/* estilos api dolar*/
 #api-dolar{
     margin-top: 10px;
     margin-left: 15px;
 }
+
 #dolar{
     margin-top: 10px;
     margin-left: 15px;
 }
+/*Responsive*/
 
 @media (max-width: 1300px){
-    .Placa-video{
+    .producto{
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
@@ -129,7 +138,7 @@
     }
 }
 @media (max-width: 700px){
-    .Placa-video{
+    .producto{
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
@@ -144,7 +153,7 @@
 
 }
 @media (max-width: 500px){
-    .Placa-video{
+    .producto{
         display: grid;
         grid-template-columns: 1fr;
     }

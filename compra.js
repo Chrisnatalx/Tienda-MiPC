@@ -40,7 +40,9 @@ function eliminarDelCarrito(productoId) {
     localStorage.setItem('carrito',JSON.stringify(nuevosID));
     cargarProductosCarrito();
 }
+//AJAX
 const URLGET = 'https://www.dolarsi.com/api/api.php?type=valoresprincipales';
+
 $("#boton-api").click(() => {
      $.ajax({
          method: "GET",

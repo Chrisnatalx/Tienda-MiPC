@@ -55,7 +55,7 @@ function chequearEstadoCarrito(carrito) {
         notificacion.innerHTML =`<a class="nav-link" href="compra.html" >Ver productos</a>`
     }
 }
-
+//cambio en el boton de agregar al carrito a agregado
 function cambio(carrito,productoId) {
     chequearEstadoCarrito(carrito);
     const boton = document.getElementById(`boton${productoId}`);
@@ -77,7 +77,7 @@ function buscar() {
 
     $("#busqueda-container").css('display','block')
     cargarProductos(productosFiltrados);
- }
+}
 
 function cargarProductosCarrito() {
     const idProductosEnCarrito = obtenerCarrito()
@@ -100,4 +100,4 @@ function cargarProductosCarrito() {
     document.getElementById("borrar-busqueda").addEventListener("click",borrarBusqueda);
     
     
- }
+}
